@@ -1,95 +1,96 @@
-# Text-to-Speech-Generator
+# Text-to-Speech Generator
 
-Text-to-Speech Generator
-Overview
-This project is a simple yet powerful Text-to-Speech (TTS) tool that converts input text into human-like speech using a pre-trained deep learning model. It is built using the open-source Coqui TTS library and provides a clean, interactive interface powered by Gradio.
+## Overview
+
+This project is a simple yet powerful **Text-to-Speech (TTS)** tool that converts input text into human-like speech using a pre-trained deep learning model. It is built using the open-source **Coqui TTS** library and provides a clean, interactive interface powered by **Gradio**.
 
 Users can type any sentence and instantly hear it spoken aloud in a natural-sounding voice — all in one click, with no coding required.
 
-Model Used
+---
+
+## Model Used
+
 The TTS model used in this project is:
 
-tts_models/en/ljspeech/tacotron2-DDC from Coqui TTS
+- `tts_models/en/ljspeech/tacotron2-DDC` from Coqui TTS  
+- Trained on the **LJ Speech Dataset**, which contains recordings of a female American English speaker  
+- Uses **Tacotron2** for spectrogram generation and a **vocoder** for waveform synthesis
 
-It is trained on the LJ Speech Dataset, featuring a female American English speaker
+---
 
-The model uses Tacotron2 for spectrogram generation and a vocoder for waveform synthesis
+## Features
 
-Features
-The current version of this project supports:
+The current version supports:
 
-🔊 Convert any English text into high-quality speech
+- Convert English text into high-quality speech
+- Simple, browser-based user interface using Gradio
+- Instant audio playback with no extra tools needed
+- Real-time speech generation using a pre-trained model
+- Compatible with Google Colab and local environments
 
-🧑‍💻 Simple, browser-based user interface using Gradio
+---
 
-📁 Instant audio playback with no extra tools needed
+## How It Works
 
-💬 Real-time TTS generation using a pre-trained model
+1. **Model Loading**  
+   The Tacotron2-DDC model is loaded once using the Coqui TTS API.
 
-✅ Fully runnable in Google Colab or locally
+2. **Text Processing**  
+   The user enters text into the Gradio interface.
 
-How It Works
-Model Loading
-The Tacotron2-DDC model is loaded once using the Coqui TTS API.
+3. **TTS Conversion**  
+   The model generates a `.wav` file from the input text.
 
-Text Processing
-The user enters text using the Gradio UI.
+4. **Audio Output**  
+   The audio is played back in the browser using Gradio.
 
-TTS Conversion
-The model generates a .wav audio file from the input text.
+---
 
-Audio Output
-The Gradio app plays back the generated audio instantly.
+## Gradio Interface
 
-Gradio Interface
-A simple web-based UI was created using Gradio.
+A simple web-based interface is created using Gradio.  
 Users can:
 
-✍️ Type or paste any sentence
+- Type or paste any sentence
+- Click a button to generate audio
+- Listen to the AI-generated voice instantly
+- Can Increase the speed and also can download the audio clip.
 
-▶️ Click a button to generate audio
+---
 
-🎧 Listen to the AI-generated speech in the browser
+## Example Inputs
 
-Example Inputs
-Text Input	Output Voice
-Hello! I hope you're having a great day.	Human-like female voice (LJ Speech)
-Wow, that was absolutely amazing!	Expressive English narration
-Once upon a time, in a land far, far away...	Storytelling tone, natural-sounding
+| Text Input                                            | Output Voice                         |
+|-------------------------------------------------------|--------------------------------------|
+| Hello! I hope you're having a great day.              | Human-like female voice (LJ Speech)  |
+| Wow, that was absolutely amazing!                     | Expressive narration                 |
+| Once upon a time, in a land far, far away...          | Storytelling tone                    |
 
-Tools and Libraries Used
-Python
+---
 
-Coqui TTS – for speech generation
+## Tools and Libraries Used
 
-Gradio – for the web-based user interface
+- Python  
+- Coqui TTS – for speech synthesis  
+- Gradio – for user interface  
 
-Google Colab – for browser-based testing and deployment
+---
 
-Planned Features (Coming Soon)
-Feature	Description
-📥 Audio Download	Allow users to download the generated .wav file
-🎛️ Speed Control	Adjust the speaking rate of the TTS output
-🌍 Multilingual Support	Add support for multiple languages and accents
-🧑‍🎤 Voice Cloning	Clone your voice from a short audio sample
-🎨 Custom UI Theme	Improve layout with dark mode and modern styling
+## Planned Features
 
-How to Run
-Install Dependencies
+| Feature             | Description                                            |
+|---------------------|--------------------------------------------------------|
+| Audio Download      | Allow users to download the generated `.wav` file      |
+| Speed Control       | Add option to control speaking speed                   |
 
-bash
-Copy
-Edit
-pip install TTS gradio
-Run the App
+---
 
-bash
-Copy
-Edit
-python app.py
-Or Launch in Colab
+## Coming Soon
 
-python
-Copy
-Edit
-interface.launch()
+| Feature             | Description                                            |
+|---------------------|--------------------------------------------------------|
+| Multilingual Support| Support additional languages and accents               |
+| Voice Cloning       | Clone a user's voice from a short sample               |
+| Custom UI Theme     | Dark mode and advanced UI layout options               |
+
+---
